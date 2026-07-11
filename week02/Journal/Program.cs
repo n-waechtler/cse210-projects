@@ -30,6 +30,9 @@ class Program
                 Console.Write("> ");
                 string response = Console.ReadLine();
 
+                Console.Write("How is your mood today? (ex, Happy, Tired, Productive); ");
+                string userMood = Console.ReadLine(); // Added mood tracker
+
                 DateTime theCurrentTime = DateTime.Now;
                 string dateText = theCurrentTime.ToShortDateString();
 
@@ -37,6 +40,7 @@ class Program
                 anEntry._date = dateText;
                 anEntry._promptText = randomPrompt;
                 anEntry._entryText = response;
+                anEntry._mood = userMood;
 
                 theJournal.AddEntry(anEntry);
             }
