@@ -35,7 +35,7 @@ class Program
 
                 Entry anEntry = new Entry();
                 anEntry._date = dateText;
-                anEntry._promptText = randomPrompt();
+                anEntry._promptText = randomPrompt;
                 anEntry._entryText = response;
 
                 theJournal.AddEntry(anEntry);
