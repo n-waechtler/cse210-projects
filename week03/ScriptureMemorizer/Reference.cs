@@ -31,7 +31,7 @@ public class Reference
         }
         else
         {
-            return $"{_book} {_chapter}:{_verse}-{_endVerse}"
+            return $"{_book} {_chapter}:{_verse}-{_endVerse}";
         }
     }
 }
