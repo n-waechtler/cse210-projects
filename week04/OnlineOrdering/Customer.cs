@@ -14,6 +14,11 @@ public class Customer
         return _name;
     }
 
+    public bool LivesInUsa()
+    {
+        return _address.IsInUsa();
+    }
+
     public string GetAddressString()
     {
         return _address.GetFullAddress();

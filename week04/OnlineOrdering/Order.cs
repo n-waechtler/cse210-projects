@@ -1,27 +1,51 @@
 using System;
+using System.Collections.Generic;
 
-public class Address
+public class Order
 {
-    private string _streetAddress;
-    private string _city;
-    private string _stateProvince;
-    private string _country;
+    private List<Product> _products;
+    private Customer _customer;
 
-    public Address(string streetAddress, string city, string stateProvince, string country)
+    public Order(Customer customer)
     {
-        _streetAddress = streetAddress;
-        _city = city;
-        _stateProvince = stateProvince;
-        _country = country;
+        _customer = customer;
+        _products = new List<Product>();
     }
 
-    public bool IsInUsa()
+    public void AddProduct(Product product)
     {
-        return _country.ToLower() == "usa" || _country.ToLower() == "united states";
+        _products.Add(product);
     }
 
-    public string GetFullAddress()
+    public double CalculateOrderTotal()
     {
-        return $"{_streetAddress}\n{_city}, {_stateProvince}\n{_country}";
+        double total = 0;
+
+        foreach (Product product in _products)
+        {
+            total += product.CalculateTotalCost();
+        }
+
+        double shippingCost = _customer.LivesInUsa() ? 5.00 : 35.00;
+        total += shippingCost;
+
+        return total;
+    }
+
+    public string GetPackingLabel()
+    {
+        string label = "--- Packing Label ---\n";
+        foreach (Product product in _products)
+        {
+            label += $"Product: {product.GetName()} | ID: {product.GetProductId()}\n";
+        }
+        return label;
+    }
+
+    public string GetShippingLabel()
+    {
+        string label = $"--- Shipping Label ---\n";
+        label += $"{_customer.GetName()}\n{_customer.GetAddressString()}\n";
+        return label;
     }
 }
