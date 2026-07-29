@@ -1,5 +1,3 @@
-using System.ComponentModel;
-
 public class Assignment
 {
     private string _studentName;
