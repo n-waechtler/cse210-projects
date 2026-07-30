@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using System.Threading;
 
 namespace MindfulnessProgram
@@ -25,7 +24,7 @@ namespace MindfulnessProgram
             Console.WriteLine($"{_description}\n");
             Console.Write("How long, in seconds, would you like for your session? ");
 
-            while (!int.TryParse(Console.ReadLine(), out _duration) || _duration <= 0) ;
+            while (!int.TryParse(Console.ReadLine(), out _duration) || _duration <= 0)
             {
                 Console.Write("Please enter a valid positive number of seconds: ");
             }
