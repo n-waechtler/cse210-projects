@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 
 namespace MindfulnessProgram
 {
@@ -42,7 +41,7 @@ namespace MindfulnessProgram
             DisplayStartingMessage();
 
             Console.WriteLine("List as many items as you can according to the following prompt:");
-            Console.WriteLine($"--- {GetRandomPrompt} ---");
+            Console.WriteLine($"--- {GetRandomPrompt()} ---");
             Console.Write("You may begin in: ");
             ShowCountdown(5);
             Console.WriteLine();
