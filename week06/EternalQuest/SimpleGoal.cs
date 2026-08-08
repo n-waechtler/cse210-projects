@@ -23,7 +23,7 @@ public class SimpleGoal : Goal
     public override string GetDetailsString()
     {
         string statusSign = _isComplete ? "X" : " ";
-        return $"[{statusSign}] {GetName()} ({GetDescription})";
+        return $"[{statusSign}] {GetName()} ({GetDescription()})";
     }
 
     public override string GetStringRepresentation()
