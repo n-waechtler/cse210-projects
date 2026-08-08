@@ -12,8 +12,7 @@ public class EternalGoal : Goal
 
     public override string GetDetailsString()
     {
-        string statusSign = IsComplete() ? "X" : " ";
-        return $"[{statusSign}] {GetName()} ({GetDescription()}) - Eternal Goal";
+        return $"[ ] {GetName()} ({GetDescription()}) - Eternal Goal";
     }
 
     public override string GetStringRepresentation()
