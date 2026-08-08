@@ -103,7 +103,7 @@ public class GoalManager
 
             if (GetLevel() > levelBefore)
             {
-                Console.WriteLine($"✨ LEVEL UP! You are now Level {GetLevel()}! ✨");
+                Console.WriteLine($"*** LEVEL UP! You are now Level {GetLevel()}! ***");
             }
         }
     }
